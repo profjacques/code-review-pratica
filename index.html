@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Minhas Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Problema semântico: uso excessivo de divs sem tags estruturais (header, main, form) -->
+  <div id="app">
+    <div class="header-box">
+      <h1 class="titulo">Gerenciador de Tarefas</h1>
+      <p>Organize seu dia a dia de forma simples.</p>
+    </div>
+
+    <div class="card-input">
+      <!-- Input sem acessibilidade (sem label associado) -->
+      <input type="text" id="inp" placeholder="Digite uma tarefa...">
+      <!-- Event handler inline misturando marcação com regra de negócio -->
+      <div class="btn" onclick="add()">Adicionar Tarefa</div>
+      <div class="btn-clear" onclick="limparTudo()">Limpar Lista</div>
+    </div>
+
+    <div class="status-bar">
+      <span id="contador">0 tarefas cadastradas</span>
+    </div>
+
+    <!-- Lista sem tags semânticas de listas ordenadas ou não ordenadas -->
+    <div id="lista-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
