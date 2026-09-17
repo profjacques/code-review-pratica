@@ -1,0 +1,73 @@
+/* Problema de boas práticas: formatação irregular, uso de !important e acoplamento desnecessário */
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f6f8;
+margin: 0;
+padding: 20px;
+}
+
+#app {
+max-width: 500px;
+margin: 0 auto;
+background: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+color: #333 !important; /* Uso de !important sem necessidade de override */
+margin-top: 0;
+}
+
+.card-input {
+display: flex;
+gap: 8px;
+margin-bottom: 16px;
+}
+
+/* Seletor acoplado a IDs e falta de padronização */
+#inp {
+flex: 1;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+/* Divs estilizadas como botões sem cursor pointer ou acessibilidade via teclado */
+.btn {
+background-color: #007bff;
+color: white;
+padding: 10px 14px;
+border-radius: 4px;
+user-select: none;
+}
+
+.btn-clear {
+background-color: #dc3545;
+color: white;
+padding: 10px 14px;
+border-radius: 4px;
+user-select: none;
+}
+
+.status-bar {
+font-size: 12px;
+color: #666;
+margin-bottom: 10px;
+}
+
+/* Estilização frágil para os itens da lista */
+.item-tarefa {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 8px 10px;
+border-bottom: 1px solid #eee;
+}
+
+.btn-del {
+color: red;
+font-weight: bold;
+}
