@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Minhas Tarefas</title>
+  <title>Gerenciador de Tarefas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Problema semântico: uso excessivo de divs sem tags estruturais (header, main, form) -->
+  <!-- Problema: Container genérico sem tags semânticas (header/main) -->
   <div id="app">
-    <div class="header-box">
-      <h1 class="titulo">Gerenciador de Tarefas</h1>
-      <p>Organize seu dia a dia de forma simples.</p>
+    <!-- Problema: Estilo inline misturado no HTML -->
+    <h1 style="color: blue; text-align: center;">Minhas Tarefas</h1>
+
+    <div class="box-input">
+      <input type="text" id="taskInput" placeholder="O que você precisa fazer?">
+      
+      <!-- Problema Crítico: <div> fingindo ser botão com onclick inline -->
+      <div id="btn-add" onclick="addTask()">Salvar Tarefa</div>
+      
+      <!-- Botão que chama a função de estilo inline do JS -->
+      <button onclick="red()">Destacar Lista</button>
     </div>
 
-    <div class="card-input">
-      <!-- Input sem acessibilidade (sem label associado) -->
-      <input type="text" id="inp" placeholder="Digite uma tarefa...">
-      <!-- Event handler inline misturando marcação com regra de negócio -->
-      <div class="btn" onclick="add()">Adicionar Tarefa</div>
-      <div class="btn-clear" onclick="limparTudo()">Limpar Lista</div>
-    </div>
-
-    <div class="status-bar">
-      <span id="contador">0 tarefas cadastradas</span>
-    </div>
-
-    <!-- Lista sem tags semânticas de listas ordenadas ou não ordenadas -->
-    <div id="lista-container"></div>
+    <!-- Problema de acessibilidade: lista sem atributos ARIA ou identificação clara -->
+    <ul id="list">
+      <!-- Itens gerados dinamicamente via script.js -->
+    </ul>
   </div>
 
   <script src="script.js"></script>
